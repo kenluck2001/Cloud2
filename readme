@@ -1,0 +1,66 @@
+The creation of a streaming API based on RESTapi methodology. This python package manager, pip was the default choice used in this project.
+
+The maximum number of messages can be set to any values of choice. This is results in a stream of batches with 5 seconds delay interval. This should be set to the rate that the user can consume with hastle. 
+
+The approach is to grab all the data available on a receive_message() call. This data is passed to the user on a RESTful API powered by a combination of flask and gevent for a non blocking streaming data. The data comes in a stream using the asynchronious communication provided by Gevent.
+
+
+File Structure
+
+command.py  
+extra.py  
+__init__.py  
+server2.py  
+/settings  
+    config  
+    credentials
+/test
+test_sample.py
+
+
+
+Installation
+
+install boto3
+$ pip install boto3
+Check ( https://github.com/boto/boto3 ).
+
+install flask
+$ pip install Flask
+Check ( http://flask.pocoo.org/docs/0.11/installation/ ).
+
+install fabric
+$ pip install fabric
+Check ( http://www.fabfile.org/installing.html ).
+
+install gevent
+You must use this version to avoid the issues discussed in the limitations.
+$ pip install cython git+git://github.com/surfly/gevent.git#egg=gevent
+Check ( https://github.com/Eugeny/gevent )
+
+How to use the software
+Add the credentials for accessing AWS in the config and credentials file in the settings folder.
+
+
+To start the web server
+$ python command.py
+
+
+Limitations
+
+There is a known issue with the current version of Gevent works with python 2.7.8 and lower because of broken ssl module. Check ( https://github.com/asciimoo/searx/issues/120 )
+
+The current http code that is supported are 200 and 404. Future work would involve running the app using a headless browser like Requests by Kenneth Reiz and obtain the http code which is be useful for debugging. This will result in customized error messages.
+
+
+Testing
+Navigate to root
+
+$ curl -i http://127.0.0.1:8001/
+This obtains the information about the health of the service.
+
+$ curl -i http://127.0.0.1:8001/messages
+This provides the message in a data stream
+
+Run the test
+$ py.test
