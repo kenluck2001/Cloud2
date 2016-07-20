@@ -19,7 +19,7 @@ server2.py  ( the core of the web application )
 
 
 
-Installation
+# Installation
 The following packages are required to power the web application.
 
 install boto3
@@ -43,7 +43,7 @@ You must use this version to avoid the issues discussed in the limitations.
 $ pip install cython git+git://github.com/surfly/gevent.git#egg=gevent
 Check ( https://github.com/Eugeny/gevent )
 
-How to use the software
+# How to use the software
 Add the credentials for accessing AWS in the config and credentials file in the settings folder.
 
 
@@ -51,14 +51,13 @@ To start the web server
 $ python command.py
 
 
-Limitations
-
+# Limitations
 There is a known issue with the current version of Gevent works with python 2.7.8 and lower because of broken ssl module. Check ( https://github.com/asciimoo/searx/issues/120 )
 
 The current http code that is supported are 200 and 404. Future work would involve running the app using a headless browser like Requests by Kenneth Reiz and obtain the http code which is be useful for debugging. This will result in customized error messages.
 
 
-Testing
+# Testing
 Navigate to root of the application
 
 $ curl -i http://127.0.0.1:8001/
