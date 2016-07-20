@@ -1,4 +1,4 @@
-The creation of a streaming API based on RESTapi methodology. This python package manager, pip was the default choice used in this project.
+The creation of a streaming API based on RESTful methodology. This python package manager, pip was the default choice used in this project.
 
 The maximum number of messages can be set to any values of choice. This is results in a stream of batches with 5 seconds delay interval. This should be set to the rate that the user can consume with hastle. 
 
