@@ -7,33 +7,38 @@ The approach is to grab all the data available on a receive_message() call. This
 
 File Structure
 
-command.py  
-extra.py  
+command.py  ( used fabric to make command line processing and running the server)
+extra.py    (helper function for formatting the data and accessing AWS queue can be found here)
 __init__.py  
-server2.py  
+server2.py  ( the core of the web application )
 /settings  
     config  
     credentials
 /test
-test_sample.py
+    test_sample.py
 
 
 
 Installation
+The following packages are required to power the web application.
 
 install boto3
+This is used for accessing and manipulating Amazon AWS
 $ pip install boto3
 Check ( https://github.com/boto/boto3 ).
 
 install flask
+This is a light weight web framework for serving HTTP
 $ pip install Flask
 Check ( http://flask.pocoo.org/docs/0.11/installation/ ).
 
 install fabric
+This provides access to command line script execution in python.
 $ pip install fabric
 Check ( http://www.fabfile.org/installing.html ).
 
 install gevent
+This is a coroutine based greenlet for asynchronic communication.
 You must use this version to avoid the issues discussed in the limitations.
 $ pip install cython git+git://github.com/surfly/gevent.git#egg=gevent
 Check ( https://github.com/Eugeny/gevent )
@@ -54,7 +59,7 @@ The current http code that is supported are 200 and 404. Future work would invol
 
 
 Testing
-Navigate to root
+Navigate to root of the application
 
 $ curl -i http://127.0.0.1:8001/
 This obtains the information about the health of the service.
