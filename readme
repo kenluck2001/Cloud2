@@ -1,6 +1,6 @@
 The creation of a streaming API based on RESTful methodology. The python package manager, pip was the default choice used in this project.
 
-The maximum number of messages can be set to any values of choice. This is results in a stream of batches with 5 seconds delay interval. This should be set to the rate that the user can consume the data.
+The maximum number of messages can be set to any values of choice. This is results in a stream of batches with 1 seconds delay interval. This should be set to the rate that the user can consume the data.
 
 The approach is to grab all the data available on a receive_message() call. This data is passed to the user on a RESTful API powered by a combination of flask and gevent for a non blocking streaming data. The data comes in a stream using the asynchronious communication provided by Gevent.
 
