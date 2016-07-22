@@ -41,7 +41,6 @@ class ProcessQueue:
               "meta": {
                 "code": status
               },
-              "service": "backend-challenge",
               "version": self.__version
             }
             return json.dumps(successDict, ensure_ascii=False)
@@ -88,12 +87,3 @@ class ProcessQueue:
           }
         }
         return json.dumps(failureDict, ensure_ascii=False)
-
-if __name__ == '__main__':
-    qObject = ProcessQueue() #queue object
-    mData = qObject.getMeta()
-    #mFmsg = qObject.getFullMessage()
-
-    the_dict = json.loads(mData)
-
-    print the_dict['version']
