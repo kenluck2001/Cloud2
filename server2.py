@@ -7,7 +7,7 @@ import requests
 
 
 gevent.monkey.patch_all()
-DELAY = 5  #5 seconds
+DELAY = 1  #1 seconds
 
 
 app = Flask(__name__)
