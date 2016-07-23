@@ -5,6 +5,7 @@ The maximum number of messages can be set to any values of choice. This is resul
 The approach is to grab all the data available on a receive_message() call. This data is passed to the user on a RESTful API powered by a combination of flask and gevent for a non blocking streaming data. The data comes in a stream using the asynchronious communication provided by Gevent.
 
 There is a queue that has been created in AWS named "myQueue" which has been populated with data for this example to work.
+
 # File Structure
 
 command.py  ( used fabric to make command line processing and running the server)
