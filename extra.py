@@ -14,7 +14,7 @@ class ProcessQueue:
                         404: "failure"
                     }
 
-    def __init__(self, qName='challenge-backend', maxNumOfMessages = 10 ):
+    def __init__(self, qName='myQueue', maxNumOfMessages = 10 ):
         '''
             Constructor
         '''
