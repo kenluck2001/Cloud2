@@ -7,7 +7,7 @@ import requests
 
 
 gevent.monkey.patch_all()
-DELAY = 1  #1 seconds
+CDELAY = 1  #1 seconds
 
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ def event_messages():
     try:
         qObject = ProcessQueue() #queue object
         while True:
-            gevent.sleep(DELAY)
+            gevent.sleep(CDELAY)
             yield qObject.getFullMessage()  + "\n"
     except GeneratorExit: # Or maybe use flask signals
         pass
@@ -33,7 +33,7 @@ def event_index():
     try:
         qObject = ProcessQueue() #queue object
         while True:
-            gevent.sleep(DELAY)
+            gevent.sleep(CDELAY)
             yield qObject.getMeta() + "\n"   
     except GeneratorExit: # Or maybe use flask signals
         pass
